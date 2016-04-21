@@ -28,6 +28,7 @@ function timeList_init(event)
 	clock.timeStore = new Array();
 	clock.timePosition = new Array();
 	clock.timeSelect = 0;
+	clock.currentDigit = null;
 
 	enterFrame = {};
 	enterFrame.instance = null;
@@ -72,7 +73,7 @@ function timeList_displayWrite()
 			}
 			hm = _h + ':' + _m;
 
-			clock.gfx.innerHTML += '<li class="timeValue_' + arrayRef + '">' + hm + '</li>';
+			clock.gfx.innerHTML += '<li class="timeValue_' + arrayRef + ' tween">' + hm + '</li>';
 
 			timeLine = document.querySelector("#display .timeValue_" + arrayRef);
 
@@ -160,7 +161,16 @@ function time_format()
 
 function timeList_moveApply()
 {
+	var digit = document.querySelector("#display .timeValue_" + clock.timeSelect);
+
+	if(clock.currentDigit != null)
+	{
+		clock.currentDigit.classList.remove("on");
+	}
+
+	digit.classList.add("on");
 	clock.gfx.style.transform = 'translateY(' + -clock.timePosition[clock.timeSelect] + 'px)';
+	clock.currentDigit = digit;
 }
 
 function enterFrame_init(run)

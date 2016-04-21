@@ -8,6 +8,11 @@
 	outline: 0;
 }
 
+ul li
+{
+	list-style: none;
+}
+
 .fill
 {
 	position: absolute;
@@ -51,4 +56,12 @@
 .time li
 {
 	padding-bottom: 30px;
+	opacity: 0.3;
+	transition: 300ms ease-out;
+}
+
+.time .on
+{
+	opacity: 1;
+	transform: translateX(25%);
 }
