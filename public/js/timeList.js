@@ -3,10 +3,15 @@ var trace = function(msg){ console.log(msg); };
 var timeData;
 var clock;
 var enterFrame;
+var buildDelay;
+var preloader;
+var firstLoad;
 
 function timeList_init(event)
 {
 	trace(this);
+
+	preloader = document.querySelector(".preloader");
 
 	timeData 						= {};
 	timeData.data 			= new Date(Date.now());
@@ -38,7 +43,9 @@ function timeList_init(event)
 	enterFrame.instance = null;
 	enterFrame.loop = false;
 
-	timeList_displayWrite();
+	firstLoad = true;
+	buildDelay = setTimeout(timeList_displayWrite, 1000);
+	// timeList_displayWrite();
 }
 
 function timeList_displayWrite()
@@ -94,6 +101,12 @@ function timeList_displayWrite()
 
 	// START LOOP
 	enterFrame_init(true);
+
+	if(firstLoad)
+	{
+		firstLoad = false;
+		preload_remove();
+	}
 }
 
 function time_check()
@@ -212,4 +225,17 @@ function enterFrame_loop()
 	{
 		enterFrame.instance = window.requestAnimationFrame(enterFrame_loop);
 	}
+}
+
+function preload_remove()
+{
+	preloader.addEventListener("transitionend", preload_remove_event, false);
+	preloader.style.opacity = 0;
+}
+
+function preload_remove_event(event)
+{
+	preloader.removeEventListener("transitionend", preload_remove_event, false);
+	preloader.remove();
+	preloader = null;
 }
