@@ -41,6 +41,7 @@ ul li
 {
 	width: inherit;
 	position: relative;
+	margin-left: 8px;
 
 	font-family: sans-serif;
 	font-size: 60px;
@@ -63,17 +64,17 @@ ul li
 .time .on
 {
 	opacity: 1;
-	transform: translateX(25%);
+	transform: translateX(24px);
 }
 
 .secondBar
 {
-	width: 20px;
+	width: 4px;
 	height: 0%;
-	background-color: #fff;
-	opacity: 0.4;
+	background-color: #ff0033;
+	opacity: 1;
 	position: absolute;
-	top: 0; right: 10px; bottom: 0;
+	top: 0; left: 0; bottom: 0;
 
-	transition: 250ms ease-in-out;
+	transition: 400ms linear;
 }
