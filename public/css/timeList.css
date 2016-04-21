@@ -40,7 +40,7 @@ ul li
 	background: #a5d9c9;
 	color: #f27186;
 
-	transition: 500ms ease-in-out;
+	transition: 800ms ease-in-out;
 }
 
 .preloader p
@@ -87,15 +87,21 @@ ul li
 	position: relative;
 	margin-left: 8px;
 
-	font-family: 'Lato', sans-serif;
+	/* font-family: 'Lato', sans-serif; */
+	font-family: sans-serif;
 	font-weight: 700;
-	font-size: 1em;
+	/* font-size: 1em; */
+	font-size: 60px;
 	color: #fff;
 }
 
 .time
 {
-	opacity: 0;
+
+}
+
+.time-tween
+{
 	transition: 600ms ease-in-out;
 }
 

@@ -94,8 +94,6 @@ function timeList_displayWrite()
 		}
 	}
 
-	clock.gfx.style.opacity = 1;
-
 	// FORMAT
 	time_format();
 
@@ -229,8 +227,10 @@ function enterFrame_loop()
 
 function preload_remove()
 {
+	clock.gfx.classList.add("time-tween");
+
 	preloader.addEventListener("transitionend", preload_remove_event, false);
-	preloader.style.opacity = 0;
+	preloader.style.transform = "translateX(-100%)";
 }
 
 function preload_remove_event(event)
