@@ -161,9 +161,9 @@ ul li
 
 .bleed-left
 {
-	width: 10%;
+	width: 25%;
 	height: 100%;
 	position: absolute;
 	top: 0; bottom: 0; left: 0;
-	background: linear-gradient(to right, rgba(16, 16, 22, 0.6) 0%, rgba(16, 16, 22, 0) 100%);
+	background: linear-gradient(to right, rgba(16, 16, 22, 0.8) 0%, rgba(16, 16, 22, 0) 100%);
 }
