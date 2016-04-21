@@ -136,6 +136,49 @@ ul li
 	transition: 400ms linear;
 }
 
+.bleed
+{
+
+}
+
+.bleed-top
+{
+	width: 100%;
+	height: 240px;
+	position: absolute;
+	top: 0; right: 0; left: 0;
+	/* background: linear-gradient(to bottom, rgba(16, 16, 22, 1) 0%, rgba(16, 16, 22, 0) 100%); */
+}
+
+.bleed-bottom
+{
+	width: 100%;
+	height: 240px;
+	position: absolute;
+	bottom: 0; right: 0; left: 0;
+	/* background: linear-gradient(to top, rgba(16, 16, 22, 1) 0%, rgba(16, 16, 22, 0) 100%); */
+}
+
+.bleed-left
+{
+	width: 40%;
+	height: 100%;
+	position: absolute;
+	top: 0; bottom: 0; left: 0;
+	/* background: linear-gradient(to right, rgba(16, 16, 22, 0.8) 0%, rgba(16, 16, 22, 0) 100%); */
+}
+
+.bleed-safe
+{
+	width: 10%;
+	height: 100%;
+	position: absolute;
+	top: 0; bottom: 0; left: 0;
+	background: linear-gradient(to right, rgba(16, 16, 22, 0.6) 0%, rgba(16, 16, 22, 0) 100%);
+}
+
+/* ------------------------- COLOR */
+
 .secondBar-light-morning
 {
 	background-color: #ff6633;
@@ -156,36 +199,63 @@ ul li
 	background-color: #4c6699;
 }
 
-
-
-.bleed
+.secondBar-light-morning-grad > .bleed-top
 {
-
+	background: linear-gradient(to bottom, rgba(255, 102, 51, 1) 0%, rgba(255, 102, 51, 0) 100%);
 }
 
-.bleed-top
+.secondBar-light-morning-grad > .bleed-bottom
 {
-	width: 100%;
-	height: 240px;
-	position: absolute;
-	top: 0; right: 0; left: 0;
-	background: linear-gradient(to bottom, rgba(16, 16, 22, 1) 0%, rgba(16, 16, 22, 0) 100%);
+	background: linear-gradient(to top, rgba(255, 102, 51, 1) 0%, rgba(255, 102, 51, 0) 100%);
 }
 
-.bleed-bottom
+.secondBar-light-morning-grad > .bleed-left
 {
-	width: 100%;
-	height: 240px;
-	position: absolute;
-	bottom: 0; right: 0; left: 0;
-	background: linear-gradient(to top, rgba(16, 16, 22, 1) 0%, rgba(16, 16, 22, 0) 100%);
+	background: linear-gradient(to right, rgba(0, 204, 143, 0.8) 0%, rgba(0, 204, 143, 0) 100%);
 }
 
-.bleed-left
+.secondBar-light-afternoon-grad > .bleed-top
 {
-	width: 25%;
-	height: 100%;
-	position: absolute;
-	top: 0; bottom: 0; left: 0;
-	background: linear-gradient(to right, rgba(16, 16, 22, 0.8) 0%, rgba(16, 16, 22, 0) 100%);
+	background: linear-gradient(to bottom, rgba(128, 200, 255, 1) 0%, rgba(128, 200, 255, 0) 100%);
 }
+
+.secondBar-light-afternoon-grad > .bleed-bottom
+{
+	background: linear-gradient(to top, rgba(128, 200, 255, 1) 0%, rgba(128, 200, 255, 0) 100%);
+}
+
+.secondBar-light-afternoon-grad > .bleed-left
+{
+	background: linear-gradient(to right, rgba(0, 204, 143, 0.8) 0%, rgba(0, 204, 143, 0) 100%);
+}
+
+.secondBar-light-evening-grad > .bleed-top
+{
+	background: linear-gradient(to bottom, rgba(0, 204, 143, 1) 0%, rgba(0, 204, 143, 0) 100%);
+}
+
+.secondBar-light-evening-grad > .bleed-bottom
+{
+	background: linear-gradient(to top, rgba(0, 204, 143, 1) 0%, rgba(0, 204, 143, 0) 100%);
+}
+
+.secondBar-light-evening-grad > .bleed-left
+{
+	background: linear-gradient(to right, rgba(76, 102, 153, 0.8) 0%, rgba(76, 102, 153, 0) 100%);
+}
+
+.secondBar-light-night-grad > .bleed-top
+{
+	background: linear-gradient(to bottom, rgba(76, 102, 153, 1) 0%, rgba(76, 102, 153, 0) 100%);
+}
+
+.secondBar-light-night-grad > .bleed-bottom
+{
+	background: linear-gradient(to top, rgba(76, 102, 153, 1) 0%, rgba(76, 102, 153, 0) 100%);
+}
+
+.secondBar-light-night-grad > .bleed-left
+{
+	background: linear-gradient(to right, rgba(255, 102, 51, 0.8) 0%, rgba(255, 102, 51, 0) 100%);
+}
+

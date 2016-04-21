@@ -3,6 +3,7 @@ var trace = function(msg){ console.log(msg); };
 var timeData;
 var clock;
 var bg;
+var bleedSource;
 var enterFrame;
 var buildDelay;
 var preloader;
@@ -14,6 +15,10 @@ function timeList_init(event)
 
 	preloader = document.querySelector(".preloader");
 	bg = document.querySelector(".bg");
+
+	bleedSource = {};
+	bleedSource.bleed0 = document.querySelector("#display .bleed0");
+	bleedSource.bleed1 = document.querySelector("#display .bleed1");
 
 	timeData 						= {};
 	timeData.data 			= new Date(Date.now());
@@ -270,6 +275,13 @@ function color_light_find()
 	{
 		clock.seconds.gfx.classList.remove(clock.seconds.color[clock.seconds.colorSelectorCurrent]);
 		clock.seconds.gfx.classList.add(clock.seconds.color[clock.seconds.colorSelector]);
+
+		bleedSource.bleed0.classList.remove(clock.seconds.color[clock.seconds.colorSelectorCurrent] + "-grad");
+		bleedSource.bleed1.classList.remove(clock.seconds.color[clock.seconds.colorSelectorCurrent] + "-grad");
+
+		bleedSource.bleed0.classList.add(clock.seconds.color[clock.seconds.colorSelector] + "-grad");
+		bleedSource.bleed1.classList.add(clock.seconds.color[clock.seconds.colorSelector] + "-grad");
+
 		clock.seconds.colorSelectorCurrent = clock.seconds.colorSelector;
 	}
 }
