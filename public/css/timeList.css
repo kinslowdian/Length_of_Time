@@ -74,6 +74,11 @@ ul li
 .bg
 {
 	background: rgb(16, 16, 22);
+	background-image: url(../img/photo-1447877085163-3cce903855cd.jpeg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 .wrapper
@@ -152,4 +157,13 @@ ul li
 	position: absolute;
 	bottom: 0; right: 0; left: 0;
 	background: linear-gradient(to top, rgba(16, 16, 22, 1) 0%, rgba(16, 16, 22, 0) 100%);
+}
+
+.bleed-left
+{
+	width: 10%;
+	height: 100%;
+	position: absolute;
+	top: 0; bottom: 0; left: 0;
+	background: linear-gradient(to right, rgba(16, 16, 22, 0.6) 0%, rgba(16, 16, 22, 0) 100%);
 }
