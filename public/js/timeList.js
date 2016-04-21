@@ -2,6 +2,7 @@ var trace = function(msg){ console.log(msg); };
 
 var timeData;
 var clock;
+var bg;
 var enterFrame;
 var buildDelay;
 var preloader;
@@ -12,6 +13,7 @@ function timeList_init(event)
 	trace(this);
 
 	preloader = document.querySelector(".preloader");
+	bg = document.querySelector(".bg");
 
 	timeData 						= {};
 	timeData.data 			= new Date(Date.now());
@@ -37,6 +39,10 @@ function timeList_init(event)
 	clock.seconds = {};
 	clock.seconds.gfx = document.querySelector("#display .secondBar");
 	clock.seconds.percentage = 100 / 59;
+	clock.seconds.color = new Array();
+	clock.seconds.color = ["secondBar-light-morning", "secondBar-light-afternoon", "secondBar-light-evening", "secondBar-light-night"];
+	clock.seconds.colorSelector = 0;
+	clock.seconds.colorSelectorCurrent = 0;
 
 
 	enterFrame = {};
@@ -104,6 +110,7 @@ function timeList_displayWrite()
 	{
 		firstLoad = false;
 		preload_remove();
+		color_light_find();
 	}
 }
 
@@ -114,6 +121,7 @@ function time_check()
 	// HOUR + MINS
 	if(timeData.read.h != timeData.current.h || timeData.read.m != timeData.current.m)
 	{
+		color_light_find();
 		amend = true;
 	}
 
@@ -224,6 +232,48 @@ function enterFrame_loop()
 		enterFrame.instance = window.requestAnimationFrame(enterFrame_loop);
 	}
 }
+
+function color_light_find()
+{
+	// NIGHT
+	if(timeData.read.h >= 0 && timeData.read.h < 5)
+	{
+		clock.seconds.colorSelector = 3;
+	}
+
+	// MORNING
+	else if(timeData.read.h >= 5 && timeData.read.h < 12)
+	{
+		clock.seconds.colorSelector = 0;
+	}
+
+	// AFTERNOON
+	else if(timeData.read.h >= 12 && timeData.read.h < 17)
+	{
+		clock.seconds.colorSelector = 1;
+	}
+
+	// EVENING
+	else if(timeData.read.h >= 17 && timeData.read.h < 21)
+	{
+		clock.seconds.colorSelector = 2;
+	}
+
+	// NIGHT
+	else if(timeData.read.h >= 21 && timeData.read.h <= 23)
+	{
+		clock.seconds.colorSelector = 3;
+	}
+
+	// DETECT CHANGE
+	if(clock.seconds.colorSelector !== clock.seconds.colorSelectorCurrent)
+	{
+		clock.seconds.gfx.classList.remove(clock.seconds.color[clock.seconds.colorSelectorCurrent]);
+		clock.seconds.gfx.classList.add(clock.seconds.color[clock.seconds.colorSelector]);
+		clock.seconds.colorSelectorCurrent = clock.seconds.colorSelector;
+	}
+}
+
 
 function preload_remove()
 {

@@ -74,7 +74,8 @@ ul li
 .bg
 {
 	background: rgb(16, 16, 22);
-	background-image: url(../img/photo-1447877085163-3cce903855cd.jpeg);
+	/* background-image: url(../img/photo-1447877085163-3cce903855cd.jpeg); */
+	background-image: url(https://source.unsplash.com/category/nature);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -128,13 +129,34 @@ ul li
 {
 	width: 4px;
 	height: 0%;
-	background-color: #ff0033;
 	opacity: 1;
 	position: absolute;
 	top: 0; left: 0; bottom: 0;
 
 	transition: 400ms linear;
 }
+
+.secondBar-light-morning
+{
+	background-color: #ff6633;
+}
+
+.secondBar-light-afternoon
+{
+	background-color: #66ccff;
+}
+
+.secondBar-light-evening
+{
+	background-color: #00cc8f;
+}
+
+.secondBar-light-night
+{
+	background-color: #4c6699;
+}
+
+
 
 .bleed
 {
