@@ -29,6 +29,10 @@ function timeList_init(event)
 	clock.timePosition = new Array();
 	clock.timeSelect = 0;
 	clock.currentDigit = null;
+	clock.seconds = {};
+	clock.seconds.gfx = document.querySelector("#display .secondBar");
+	clock.seconds.percentage = 100 / 59;
+
 
 	enterFrame = {};
 	enterFrame.instance = null;
@@ -105,7 +109,8 @@ function time_check()
 	// SECS
 	if(timeData.read.s != timeData.current.s)
 	{
-
+		clock.seconds.gfx.style.height = (timeData.read.s * clock.seconds.percentage) + "%";
+		timeData.current.s = timeData.read.s;
 	}
 
 	if(amend)
@@ -122,7 +127,7 @@ function time_check()
 
 				timeData.current.h = timeData.read.h;
 				timeData.current.m = timeData.read.m;
-				timeData.current.s = timeData.read.s;
+				// timeData.current.s = timeData.read.s;
 
 				break;
 			}
