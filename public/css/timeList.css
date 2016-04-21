@@ -33,12 +33,15 @@ ul li
 
 .preloader
 {
-	font-family: 'Lato', sans-serif;
+	/* font-family: 'Lato', sans-serif; */
+	font-family: sans-serif;
 	font-weight: 300;
 	font-size: 20px;
 
 	background: #a5d9c9;
 	color: #f27186;
+
+	overflow: hidden;
 
 	transition: 800ms ease-in-out;
 }
@@ -51,7 +54,7 @@ ul li
 	top: 40px;
 	left: 40px;
 
-	animation: preloaderFrames 800ms ease-in-out infinite;
+	animation: preloaderFrames 1600ms ease-in-out infinite;
 }
 
 @keyframes preloaderFrames
@@ -59,6 +62,25 @@ ul li
 	0%		{transform: translateX(0px);}
 	50%		{transform: translateX(40px);}
 	100%	{transform: translateX(0px);}
+}
+
+.preloader .cog
+{
+	width: 240px;
+	height: 240px;
+	position: absolute;
+	left: 0; right: 0; top: 0; bottom: 0;
+	margin: auto;
+
+	background: url(../img/wheel.svg) center center no-repeat;
+
+	animation: cogFrames 800ms linear infinite;
+}
+
+@keyframes cogFrames
+{
+	0%		{transform: rotate(0deg);}
+	100%	{transform: rotate(360deg);}
 }
 
 #display
